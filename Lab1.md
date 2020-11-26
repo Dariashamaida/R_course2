@@ -24,5 +24,23 @@ head(table_plan, n=6)
 6 id-2020-5  Про ~ Закон Україн~ нови~ Забезпеч~ null          null             Департ~ 37552996  44195           
 # ... with 5 more variables: accessURL <chr>, bibliographicCitation <chr>, dateSubmitted <chr>,
 #   regulatoryAgencyPrefLabel <chr>, regulatoryAgencyIdentifier <chr>
+```
 
+### 2. За допомогою download.file() завантажте файл getdata_data_ss06hid.csv за посиланням https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv та завантажте дані в R. Code book, що пояснює значення змінних знаходиться за посиланням https://www.dropbox.com/s/dijv0rlwo4mryv5/PUMSDataDict06.pdf?dl=0 Необхідно знайти, скільки property мають value $1000000+
 
+```{R}
+housing_data<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+folder_for_data<-"G:/KNU/6 курс/R/housing.csv"
+download.file (housing_data, folder_for_data)
+
+table_housing<-read.csv(folder_for_data)
+
+sample_data<-subset(table_housing, VAL==24)
+nrow(sample_data)
+[1] 53
+
+##### or
+
+length(which(table_housing$VAL==24))
+[1] 53
+```
