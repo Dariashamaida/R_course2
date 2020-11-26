@@ -44,3 +44,16 @@ nrow(sample_data)
 length(which(table_housing$VAL==24))
 [1] 53
 ```
+
+### 3. Зчитайте xml файл за посиланням http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Скільки ресторанів мають zipcode 21231?
+install.packages("XML") 
+library(XML)
+
+hml_data_web<-"http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+hml_next<-xmlTreeParse(hml_data_web, useInternal = TRUE)
+root_hml<-xmlRoot(hml_next)
+
+zipcode<-xpathSApply(root_hml, "//zipcode", xmlValue)
+length(which(zipcode==21231))
+[1] 127
+
