@@ -6,3 +6,21 @@ The experiments have been video-recorded to label the data manually.The obtained
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). 
 The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. 
 The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+
+### R Script
+The R script for_analysis.md describes the following steps:
+1. Getting the raw data, assign descriptive labels;
+2. Uniting test and train data together;
+3. For each testing pulling out only mean and standard deviation measurement;
+4. Using activities performed as the activity labels in dataset;
+5. Creating independent tidy dataset with means for each variable-activity-subject.
+
+### Codebook
+CodeBook.md explains the steps how to obtain the tidy dataset.
+
+### Tidy dataset
+The 'tidy_dataset.csv' is outputted and saved.
+
+
+
