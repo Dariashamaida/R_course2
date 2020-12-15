@@ -31,6 +31,7 @@ totalYearEmission<-rename(totalYearEmission,Year=Group.1)
 4 2008 3464206 3464.206
 
 #creating plot
-plot(totalYearEmission$Year,totalYearEmission$Total, type='b', xlab='Year', ylab='Total Emission of PM2.5(tonns)')
+plot(totalYearEmission$Year,totalYearEmission$Total, type='b', xlab='Year', ylab='Total Emission of PM2.5 (tonns)',col='red',xaxt = "n")
+axis(1, at = c(1999,2002,2005,2008), labels = c(1999,2002,2005,2008))
 
 #Results - As the obtained plot shows, total PM2.5 emissions in the United States have a tendency for decreasing from 1999 to 2008
