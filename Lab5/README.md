@@ -9,7 +9,7 @@ The gravitational force is assumed to have only low frequency components, theref
 
 
 ### R Script
-The R script for_analysis.md describes the following steps:
+The R script run_analysis.md describes the following steps:
 1. Getting the raw data, assign descriptive labels;
 2. Uniting test and train data together;
 3. For each testing pulling out only mean and standard deviation measurement;
