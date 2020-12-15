@@ -13,9 +13,10 @@
  totalYearEmission_Baltimor  <-rename(totalYearEmission_Baltimor,Year=Group.1)
  
  #creating plot - lets try blue color
- plot(totalYearEmission_Baltimor  $Year,totalYearEmission_Baltimor  $Total, type='b', xlab='Year', ylab='Total Emission of PM2.5 in Baltimor (tonns)',col='blue')
- 
- #Results - As the obtained plot shows, total PM2.5 emissions in Baltimor have a tendency for decreasing from 1999 to 2008
+ plot(totalYearEmission_Baltimor$Year,totalYearEmission_Baltimor$Total, type='b', xlab='Year', ylab='Total Emission of PM2.5 in Baltimor (tonns)',col='blue',xaxt = "n")
+ axis(1, at = c(1999,2002,2005,2008), labels = c(1999,2002,2005,2008)) 
+
+ #Results - As the obtained plot shows, total PM2.5 emissions in Baltimor decreased in 2002, then increased in 2005 and finally rapidly decreased in 2008
  
  
  
