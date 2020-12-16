@@ -35,4 +35,6 @@ activ_def<-within(mean_and_std , Activity <- factor(Activity, labels = activity_
 
 #5.  Create tidy data set with the calculated average for each activity and subject
 final <- aggregate(x = activ_def[, -c(67,68)], by = list(activ_def[,'Subject'], activ_def[, 'Activity']), FUN = mean)
+#renaming variables
+final<-rename(final,Subject=Group.1, Position.Measurement=Group.2)
 write.csv(final , "tidy_dataset.csv", row.names=F)
