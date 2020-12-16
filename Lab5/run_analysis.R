@@ -1,3 +1,6 @@
+install.packages("dplyr") 
+library(dplyr)
+
 #creating dataframe with col names
 features_ <- read.table('G:\\KNU\\6 курс\\R\\Lab 5\\UCI HAR Dataset\\features.txt', colClasses = "character")[,2]
 
@@ -23,3 +26,8 @@ subj <- rbind(subject_test,subject_train)
 
 data_all <- cbind(x,y,subj)
 
+#2 Extract mean and standard deviation for each measurement
+#deleting duplicates
+no_dup <- data_all[, !duplicated(colnames(data_all))]
+#selecting needed columns
+mean_and_std <- select(data2,  matches("mean\\(\\)|std\\(\\)|Subject|Activity"))
